@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-</PreferenceScreen>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">ep-calm-glade-a26vds28.eu-central-1.aws.neon.tech</domain>
+    </domain-config>
+</network-security-config>
