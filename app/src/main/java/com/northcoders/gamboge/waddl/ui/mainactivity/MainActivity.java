@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.northcoders.gamboge.waddl.R;
+import com.northcoders.gamboge.waddl.databinding.ActivityMainBinding;
 import com.northcoders.gamboge.waddl.model.Task;
 
 import java.util.ArrayList;
