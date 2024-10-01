@@ -1,14 +1,15 @@
 package com.northcoders.gamboge.waddl.ui.mainactivity;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+import com.northcoders.gamboge.waddl.R;
 import com.northcoders.gamboge.waddl.databinding.TaskItemBinding;
-
 import com.northcoders.gamboge.waddl.model.Task;
-
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
@@ -21,7 +22,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
-        public TaskItemBinding taskItemBinding;
+        private TaskItemBinding taskItemBinding;
         public TaskViewHolder(TaskItemBinding taskItemBinding) {
             super(taskItemBinding.getRoot());
             this.taskItemBinding = taskItemBinding;
