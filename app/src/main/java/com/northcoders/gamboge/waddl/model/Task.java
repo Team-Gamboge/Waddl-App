@@ -2,6 +2,7 @@ package com.northcoders.gamboge.waddl.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 
 import java.time.LocalDate;
 
