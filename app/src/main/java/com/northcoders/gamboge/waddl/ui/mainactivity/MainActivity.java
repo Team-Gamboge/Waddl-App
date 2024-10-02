@@ -2,6 +2,7 @@ package com.northcoders.gamboge.waddl.ui.mainactivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
