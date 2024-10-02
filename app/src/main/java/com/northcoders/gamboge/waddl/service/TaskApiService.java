@@ -18,8 +18,8 @@ public interface TaskApiService {
     Call<List<Task>> getAllTasks();
 
     @GET("tasks/{id}")
-    Call<List<Task>> getTaskById();
-    // functionality has not been added
+    //    Call<List<Task>> getTaskById();
+    //    // functionality has not been added
 
     @POST("tasks")
     Call<Task> addTask (@Body Task task);
