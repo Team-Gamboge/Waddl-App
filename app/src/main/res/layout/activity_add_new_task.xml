@@ -14,11 +14,11 @@
         android:layout_height="match_parent"
         tools:context=".ui.addtask.AddNewTaskActivity">
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imageView"
             android:layout_width="223dp"
             android:layout_height="257dp"
-            android:src="@drawable/walkingpenguin"
+            android:src="@drawable/jump"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
