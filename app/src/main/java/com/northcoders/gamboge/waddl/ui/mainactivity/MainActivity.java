@@ -48,11 +48,9 @@ public class MainActivity extends AppCompatActivity {
         viewModel.getAllTasks().observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(List<Task> tasksFromLiveData) {
-                // albums refers to the variable name of your List of Album objects
-                // albumsFromLiveData is cast to this type
+
                 taskList = (ArrayList<Task>) tasksFromLiveData;
 
-                // This method will be created next
                 displayInRecyclerView();
             }
         });
