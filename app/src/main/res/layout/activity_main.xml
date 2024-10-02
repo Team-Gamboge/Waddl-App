@@ -22,15 +22,14 @@
           android:id="@+id/quoteTextView"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="128dp"
           android:gravity="center"
           android:text="@{quote.q}"
           android:textSize="18sp"
-          android:layout_marginBottom="400dp"
-          app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          tools:text="QUOTE GOES HERE"/>
+          tools:text="QUOTE GOES HERE" />
 
       <androidx.recyclerview.widget.RecyclerView
 
@@ -40,6 +39,16 @@
           android:layout_height="0dp"
           android:layout_marginTop="308dp"
           android:backgroundTint="#E1D7C6"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <Button
+          android:id="@+id/button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp"
+          android:text="Button"
+          app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
 
