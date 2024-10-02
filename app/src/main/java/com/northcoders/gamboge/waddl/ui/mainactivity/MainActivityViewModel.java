@@ -7,18 +7,17 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.northcoders.gamboge.waddl.model.Quote;
+import com.northcoders.gamboge.waddl.model.QuoteRepository;
 import com.northcoders.gamboge.waddl.model.Task;
 import com.northcoders.gamboge.waddl.model.TaskRepository;
 
 import java.util.List;
 
-import retrofit2.http.Body;
-import retrofit2.http.Path;
-
 public class MainActivityViewModel extends AndroidViewModel {
 
     private TaskRepository taskRepository;
-
+    private QuoteRepository quoteRepository;
     private MutableLiveData<List<Task>> taskLiveData;
 
     public MainActivityViewModel(@NonNull Application application) {
@@ -27,19 +26,22 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Task>> getAllTasks() {
-        return taskRepository.getMutableLiveData();
+        return taskRepository.getTasks();
     }
 
     public void addTask(Task task) {
         taskRepository.addTask(task);
     }
 
-    public void updateTaskById(Long id, Task task){
+    public void updateTaskById(Long id, Task task) {
         taskRepository.updateTask(id, task);
     }
 
     public void deleteTaskById(Long id) {
         taskRepository.deleteTaskById(id);
     }
+
+    public LiveData<Quote> getQuote() { return quoteRepository.getQuote(); }
+
 
 }
