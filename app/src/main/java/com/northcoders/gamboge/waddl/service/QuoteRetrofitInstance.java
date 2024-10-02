@@ -7,10 +7,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QuoteRetrofitInstance {
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "https://zenquotes.io/api/today";
+    private static final String BASE_URL = "https://zenquotes.io/api/random";
 
 
-    public static TaskApiService getService() {
+    public static QuoteApiService getService() {
         if (retrofit == null) {
             // this allows us to log the JSON body of the HTTP request
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
@@ -24,7 +24,7 @@ public class QuoteRetrofitInstance {
                     .client(client)
                     .build();
         }
-        return retrofit.create(TaskApiService.class);
+        return retrofit.create(QuoteApiService.class);
     }
 
 }

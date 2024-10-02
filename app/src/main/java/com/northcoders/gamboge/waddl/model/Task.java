@@ -20,6 +20,7 @@ public class Task extends BaseObservable {
         this.title = title;
         this.id = id;
     }
+
     @Bindable
     public long getId() {
         return id;
