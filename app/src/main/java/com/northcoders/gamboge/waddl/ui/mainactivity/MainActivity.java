@@ -1,6 +1,7 @@
 package com.northcoders.gamboge.waddl.ui.mainactivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.northcoders.gamboge.waddl.R;
 import com.northcoders.gamboge.waddl.databinding.ActivityMainBinding;
+import com.northcoders.gamboge.waddl.model.Quote;
 import com.northcoders.gamboge.waddl.model.Task;
 
 import java.util.ArrayList;
@@ -24,27 +26,29 @@ public class MainActivity extends AppCompatActivity {
     private TaskAdapter taskAdapter;
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
-
+    private TextView quoteTextView;
+    private Quote quote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
+        quoteTextView = findViewById(R.id.quoteTextView);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         viewModel = new ViewModelProvider(this)
                 .get(MainActivityViewModel.class);
 
         getAllTasks();
+        getQuote();
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
     }
 
-    private void getAllTasks () {
+    private void getAllTasks() {
         viewModel.getAllTasks().observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(List<Task> tasksFromLiveData) {
@@ -56,7 +60,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void displayInRecyclerView(){
+
+    private void getQuote() {
+        viewModel.getQuote().observe(this, new Observer<List<Quote>>() {
+            @Override
+            public void onChanged(List<Quote> quoteFromLiveData) {
+
+                quote = quoteFromLiveData.get(0);
+            }
+        });
+    }
+
+
+    private void displayInRecyclerView() {
         recyclerView = binding.recyclerView;
         taskAdapter = new TaskAdapter(this, taskList);
         recyclerView.setAdapter(taskAdapter);
@@ -64,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
         taskAdapter.notifyDataSetChanged();
+
     }
 
 }

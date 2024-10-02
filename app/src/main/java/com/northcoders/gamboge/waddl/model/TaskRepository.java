@@ -29,7 +29,7 @@ public class TaskRepository {
         this.application = application;
     }
 
-    public static MutableLiveData<List<Task>> getMutableLiveData() {
+    public static MutableLiveData<List<Task>> getTasks() {
 
         TaskApiService taskApiService = RetrofitInstance.getService();
         Call<List<Task>> call = taskApiService.getAllTasks();
