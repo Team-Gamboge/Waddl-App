@@ -12,17 +12,60 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.addtask.AddNewTaskActivity"
-        >
+        tools:context=".ui.addtask.AddNewTaskActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="223dp"
+            android:layout_height="257dp"
+            android:src="@drawable/walkingpenguin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.094"
+            />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Add a Task"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:text="@={task.title}"
+            android:hint="Enter title"
+            android:layout_width="395dp"
+            android:layout_height="83dp"
+            android:minHeight="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.76"
+/>
 
         <EditText
             android:id="@+id/edit_description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="395dp"
+            android:layout_height="83dp"
             android:hint="Enter description"
-            android:text="add task"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="-89dp" />
+            android:minHeight="60dp"
+            android:text="@={task.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.612" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
