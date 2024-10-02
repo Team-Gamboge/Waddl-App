@@ -34,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        quoteTextView = findViewById(R.id.quoteTextView);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        quoteTextView = binding.quoteTextView;
+        binding.setQuote(quote);
 
         viewModel = new ViewModelProvider(this)
                 .get(MainActivityViewModel.class);
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Quote> quoteFromLiveData) {
 
                 quote = quoteFromLiveData.get(0);
+                quote.notifyChange();
+
+                quoteTextView.setText(quote.getQ());
             }
         });
     }
