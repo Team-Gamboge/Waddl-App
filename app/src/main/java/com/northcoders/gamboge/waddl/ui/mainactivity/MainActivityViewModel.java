@@ -41,7 +41,6 @@ public class MainActivityViewModel extends AndroidViewModel {
         taskRepository.deleteTaskById(id);
     }
 
-    public LiveData<Quote> getQuote() { return quoteRepository.getQuote(); }
-
+    public LiveData<List<Quote>> getQuote() { return quoteRepository.getQuote(); }
 
 }

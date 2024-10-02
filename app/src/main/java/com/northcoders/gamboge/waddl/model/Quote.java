@@ -1,12 +1,11 @@
 package com.northcoders.gamboge.waddl.model;
 
+import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-public class Quote {
+public class Quote extends BaseObservable {
 
     private String q;
-    private String a;
-    private String h;
 
 
     public Quote(String q) {

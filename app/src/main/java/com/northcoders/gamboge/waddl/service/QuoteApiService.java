@@ -11,7 +11,7 @@ import retrofit2.http.GET;
 public interface QuoteApiService {
 
     @GET("random")
-    Call<Quote> getQuote();
+    Call<List<Quote>> getQuote();
 
 }
 

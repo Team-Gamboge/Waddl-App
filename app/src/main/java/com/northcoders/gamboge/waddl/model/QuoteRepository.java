@@ -7,38 +7,43 @@ import androidx.lifecycle.MutableLiveData;
 import com.northcoders.gamboge.waddl.service.QuoteApiService;
 import com.northcoders.gamboge.waddl.service.QuoteRetrofitInstance;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class QuoteRepository {
 
-    private static MutableLiveData<Quote> mutableLiveData = new MutableLiveData<>();
+    private static MutableLiveData<List<Quote>> mutableLiveData = new MutableLiveData<>();
     private Application application;
 
     public QuoteRepository(Application application) {
         this.application = application;
     }
 
-    public static MutableLiveData<Quote> getQuote() {
-
+    public static MutableLiveData<List<Quote>> getQuote() {
         QuoteApiService quoteApiService = QuoteRetrofitInstance.getService();
-        Call<Quote> call = quoteApiService.getQuote();
+        Call<List<Quote>> call = quoteApiService.getQuote();
 
-        call.enqueue(new Callback<Quote>() {
+        call.enqueue(new Callback<List<Quote>>() {
             @Override
-            public void onResponse(Call<Quote> call, Response<Quote> response) {
-                Quote quote = response.body();
+            public void onResponse(Call<List<Quote>> call, Response<List<Quote>> response) {
+                List<Quote> quote = response.body();
                 mutableLiveData.setValue(quote);
             }
 
             @Override
-            public void onFailure(Call<Quote> call, Throwable throwable) {
+            public void onFailure(Call<List<Quote>> call, Throwable throwable) {
                 System.out.println("Error: " + throwable.getMessage());
             }
         });
 
         return mutableLiveData;
+    }
+    public void fetchQuote(Callback<Quote> callback) {
+        QuoteApiService quoteApiService = QuoteRetrofitInstance.getService();
+        Call<List<Quote>> call = quoteApiService.getQuote();
     }
 
 }

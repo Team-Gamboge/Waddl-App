@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "http://ep-calm-glade-a26vds28.eu-central-1.aws.neon.tech/waddl-d/api/v1/";
+    private static final String BASE_URL = "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/";
 
 
     public static TaskApiService getService() {
