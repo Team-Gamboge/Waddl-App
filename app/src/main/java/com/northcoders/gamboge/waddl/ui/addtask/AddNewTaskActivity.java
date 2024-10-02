@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.northcoders.gamboge.waddl.R;
 
-public class addNewTaskActivity extends AppCompatActivity {
+public class AddNewTaskActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
