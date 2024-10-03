@@ -5,18 +5,18 @@
 
     <data>
         <variable
-            name="clickHandler"
-            type="com.northcoders.gamboge.waddl.ui.addtask.AddNewActivityClickHandler" />
-        <variable
             name="task"
             type="com.northcoders.gamboge.waddl.model.Task" />
+        <variable
+            name="clickHandler"
+            type="com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivityClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.addtask.AddTaskActivity">
+        tools:context=".ui.updatetaskactivity.UpdateTaskActivity">
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imageView"
@@ -34,7 +34,7 @@
             android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:text="Add a Task"
+            android:text="Update a Task"
             android:textAlignment="center"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,8 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Add"
-            android:onClick="@{clickHandler::addTaskButtonClicked}"
+            android:onClick="@{clickHandler::updateTaskButtonClicked}"
+            android:text="Update"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

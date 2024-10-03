@@ -1,5 +1,6 @@
 package com.northcoders.gamboge.waddl.ui.mainactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -16,11 +17,13 @@ import com.northcoders.gamboge.waddl.R;
 import com.northcoders.gamboge.waddl.databinding.ActivityMainBinding;
 import com.northcoders.gamboge.waddl.model.Quote;
 import com.northcoders.gamboge.waddl.model.Task;
+import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivity;
+import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     private RecyclerView recyclerView;
     private ArrayList<Task> taskList;
@@ -64,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     public void getQuote() {
         viewModel.getQuote().observe(this, new Observer<List<Quote>>() {
             @Override
@@ -78,10 +80,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     private void displayInRecyclerView() {
         recyclerView = binding.recyclerView;
-        taskAdapter = new TaskAdapter(this, taskList);
+        taskAdapter = new TaskAdapter(this, taskList, this);
         recyclerView.setAdapter(taskAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -89,4 +90,10 @@ public class MainActivity extends AppCompatActivity {
         taskAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this, UpdateTaskActivity.class);
+        intent.putExtra(Task.PARCEL_KEY, taskList.get(position));
+        startActivity(intent);
+    }
 }
