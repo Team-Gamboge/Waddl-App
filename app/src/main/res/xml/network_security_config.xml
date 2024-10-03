@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">ep-calm-glade-a26vds28.eu-central-1.aws.neon.tech</domain>
+        <domain includeSubdomains="true">waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com</domain>
     </domain-config>
 </network-security-config>
