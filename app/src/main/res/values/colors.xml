@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="backgroundblue">#9BB0C1</color>
+    <color name="taskblue">#51829B</color>
+    <color name="textbeige">#EADFB4</color>
+    <color name="penguinorange">#DA6920</color>
+    <color name="surprisecolour">#696969</color>
+    <color name="originalorange">#F6995C</color>
+    <color name="pingugrey">#555555</color>
 </resources>
