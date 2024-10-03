@@ -24,7 +24,9 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/taskblue"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -40,7 +42,8 @@
                     android:layout_marginBottom="8dp"
                     android:gravity="left"
                     android:text="@{`Task: ` + task.title}"
-                    android:textColor="#7F7974"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/textbeige"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

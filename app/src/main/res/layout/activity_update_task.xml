@@ -16,7 +16,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.updatetaskactivity.UpdateTaskActivity">
+        tools:context=".ui.updatetaskactivity.UpdateTaskActivity"
+        android:background="@color/backgroundblue">
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imageView"
@@ -32,11 +33,14 @@
 
         <TextView
             android:id="@+id/editText"
+            android:textColor="@color/textbeige"
+            android:fontFamily="monospace"
             android:layout_width="0dp"
+            android:textStyle="bold"
             android:layout_height="50dp"
             android:text="Update a Task"
             android:textAlignment="center"
-            android:textSize="34sp"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +48,8 @@
 
         <EditText
             android:id="@+id/editTitle"
+            android:textColor="@color/textbeige"
+            android:fontFamily="monospace"
             android:layout_width="395dp"
             android:layout_height="83dp"
             android:hint="Enter title"
@@ -57,6 +63,8 @@
 
         <EditText
             android:id="@+id/edit_description"
+            android:textColor="@color/textbeige"
+            android:fontFamily="monospace"
             android:layout_width="395dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
@@ -65,13 +73,20 @@
             android:minLines="3"
             android:text="@={task.description}"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
+            app:layout_constraintBottom_toTopOf="@+id/updateTaskButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTitle" />
 
         <Button
-            android:id="@+id/addTaskButton"
+            android:id="@+id/updateTaskButton"
+            android:textColor="@color/pingugrey"
+            android:fontFamily="monospace"
+            app:strokeColor="@color/pingugrey"
+            app:strokeWidth="4dp"
+            android:backgroundTint="@color/originalorange"
+            android:textStyle="bold"
+            android:textSize="34dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -83,6 +98,10 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/backToMainButton"
+            android:textColor="@color/pingugrey"
+            app:strokeColor="@color/pingugrey"
+            app:strokeWidth="4dp"
+            android:backgroundTint="@color/originalorange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
