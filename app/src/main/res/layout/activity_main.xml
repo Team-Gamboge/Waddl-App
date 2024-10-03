@@ -18,49 +18,90 @@
       android:layout_height="match_parent"
       tools:context=".ui.mainactivity.MainActivity">
 
-      <TextView
-          android:id="@+id/quoteTextView"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="128dp"
-          android:gravity="center"
-          android:text="@{quote.q}"
-          android:textSize="18sp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          tools:text="QUOTE GOES HERE" />
-
       <androidx.recyclerview.widget.RecyclerView
 
 
           android:id="@+id/recyclerView"
           android:layout_width="match_parent"
           android:layout_height="0dp"
-          android:layout_marginTop="308dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginBottom="8dp"
           android:backgroundTint="#E1D7C6"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
-
-      <Button
-          android:id="@+id/button"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="24dp"
-          android:text="Button"
+          app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
+          app:layout_constraintTop_toBottomOf="@+id/penguinGif" />
 
       <pl.droidsonroids.gif.GifImageView
-          android:id="@+id/imageView3"
+          android:id="@+id/penguinGif"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="8dp"
+          android:background="@drawable/jump"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/speechBubble" />
+
+      <ImageView
+          android:id="@+id/speechBubble"
+          android:layout_width="0dp"
+          android:layout_height="252dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          android:background="@drawable/jump" />
+          app:srcCompat="@drawable/speech_bubble" />
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="24dp"
+          android:layout_marginBottom="24dp"
+          android:clickable="true"
+          app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+          app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+          app:srcCompat="@android:drawable/ic_menu_add" />
+
+      <FrameLayout
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_marginStart="34dp"
+          android:layout_marginTop="18dp"
+          android:layout_marginEnd="34dp"
+          android:layout_marginBottom="86dp"
+          app:layout_constraintBottom_toTopOf="@+id/penguinGif"
+          app:layout_constraintEnd_toEndOf="@+id/speechBubble"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="@+id/speechBubble"
+          app:layout_constraintTop_toTopOf="@+id/speechBubble"
+          app:layout_constraintVertical_bias="1.0">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="8dp">
+
+              <TextView
+                  android:id="@+id/quoteTextView"
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:gravity="center"
+                  android:text="@{quote.q}"
+                  android:textAlignment="center"
+                  android:textSize="18sp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:text="QUOTE GOES HERE" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </FrameLayout>
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>
