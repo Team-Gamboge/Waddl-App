@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void getQuote() {
+    public void getQuote() {
         viewModel.getQuote().observe(this, new Observer<List<Quote>>() {
             @Override
             public void onChanged(List<Quote> quoteFromLiveData) {
@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
         taskAdapter.notifyDataSetChanged();
-
     }
 
 }

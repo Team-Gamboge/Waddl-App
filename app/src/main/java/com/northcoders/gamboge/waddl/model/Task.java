@@ -6,7 +6,7 @@ import androidx.databinding.library.baseAdapters.BR;
 
 public class Task extends BaseObservable {
 
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private boolean isCompleted;
@@ -14,7 +14,7 @@ public class Task extends BaseObservable {
     public Task() {
     }
 
-    public Task(boolean isCompleted, String description, String title, long id) {
+    public Task(boolean isCompleted, String description, String title, Long id) {
         this.isCompleted = isCompleted;
         this.description = description;
         this.title = title;
@@ -26,7 +26,7 @@ public class Task extends BaseObservable {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
         notifyPropertyChanged(BR.id);
     }
