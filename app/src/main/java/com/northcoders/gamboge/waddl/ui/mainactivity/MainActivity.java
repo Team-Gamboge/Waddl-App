@@ -27,15 +27,17 @@ public class MainActivity extends AppCompatActivity {
     private TaskAdapter taskAdapter;
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
+    private MainActivityClickHandler clickHandler;
     private TextView quoteTextView;
     private Quote quote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        clickHandler = new MainActivityClickHandler(this, viewModel);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setClickHandler(clickHandler);
         quoteTextView = binding.quoteTextView;
         binding.setQuote(quote);
 
