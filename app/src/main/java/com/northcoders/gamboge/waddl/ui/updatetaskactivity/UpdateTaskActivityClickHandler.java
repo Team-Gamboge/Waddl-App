@@ -42,4 +42,12 @@ public class UpdateTaskActivityClickHandler {
 
         this.appContext.startActivity(intent);
     }
+
+    public void deleteButtonClicked(View view) {
+        Log.i("Intent", "Moving to main activity.");
+        Intent intent = new Intent(this.appContext, MainActivity.class);
+        viewModel.deleteTask(task.getId());
+
+        this.appContext.startActivity(intent);
+    }
 }
