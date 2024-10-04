@@ -2,7 +2,6 @@ package com.northcoders.gamboge.waddl.ui.updatetaskactivity;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -36,5 +35,9 @@ public class UpdateTaskActivity extends AppCompatActivity {
         this.binding.setTask(this.task);
         this.clickHandler = new UpdateTaskActivityClickHandler(this.binding.getTask(), this, this.viewModel);
         this.binding.setClickHandler(this.clickHandler);
+        this.binding.radioButton.setChecked(task.getIsCompleted());
+        this.binding.radioButton.setOnCheckedChangeListener((compoundButton, b) -> {
+            this.task.setCompleted(b);
+        });
     }
 }

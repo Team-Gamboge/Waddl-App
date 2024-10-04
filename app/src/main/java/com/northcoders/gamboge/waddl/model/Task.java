@@ -80,13 +80,13 @@ public class Task extends BaseObservable implements Parcelable {
     }
 
     @Bindable
-    public boolean isCompleted() {
+    public boolean getIsCompleted() {
         return isCompleted;
     }
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
-        notifyPropertyChanged(BR.completed);
+        notifyPropertyChanged(BR.isCompleted);
     }
 
     @Override

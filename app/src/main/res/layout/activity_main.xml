@@ -73,17 +73,12 @@
           android:layout_marginBottom="24dp"
           android:backgroundTint="@color/originalorange"
           android:clickable="true"
-          android:fontFamily="monospace"
           android:onClick="@{clickHandler::addTaskViewButtonClicked}"
           android:text="@string/add_task"
-          android:textColor="@color/pingugrey"
           android:textSize="34dp"
-          android:textStyle="bold"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-          app:layout_constraintStart_toStartOf="parent"
-          app:strokeColor="@color/pingugrey"
-          app:strokeWidth="4dp" />
+          app:layout_constraintStart_toStartOf="parent" />
 
       <FrameLayout
           android:layout_width="0dp"

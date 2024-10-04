@@ -9,10 +9,7 @@
     <color name="surprisecolour">#696969</color>
     <color name="originalorange">#F6995C</color>
     <color name="pingugrey">#555555</color>
-trinity_branch
     <color name="darkergrey">#3C3D37</color>
-
-
+    <color name="taskcomplete">#FF0000</color>
     <color name="originalred">#F27A7A</color>
-main
 </resources>
