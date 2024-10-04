@@ -1,5 +1,7 @@
 package com.northcoders.gamboge.waddl.ui.updatetaskactivity;
 
+import static com.northcoders.gamboge.waddl.utility.Utility.switchToActivityWithMessage;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -7,8 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.northcoders.gamboge.waddl.model.Task;
-import com.northcoders.gamboge.waddl.ui.addtask.AddNewTaskActivityViewModel;
 import com.northcoders.gamboge.waddl.ui.mainactivity.MainActivity;
+import com.northcoders.gamboge.waddl.ui.taskdeletedactivity.TaskUpdatedActivity;
 import com.northcoders.gamboge.waddl.utility.Utility;
 
 public class UpdateTaskActivityClickHandler {
@@ -23,17 +25,19 @@ public class UpdateTaskActivityClickHandler {
     }
 
     public void updateTaskButtonClicked(View view) {
-        Intent intent = new Intent(this.appContext, MainActivity.class);
-
         if (Utility.containsNullNonPrimitiveFields(this.task) ||
                 Utility.containsBlankStringFields(this.task) ||
                 this.task == null) {
             Toast.makeText(this.appContext, "Task input fields cannot be blank.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         this.viewModel.updateTask(task.getId(), task);
-
-        this.appContext.startActivity(intent);
+        switchToActivityWithMessage(
+                String.format("Task \"%s\" updated!", task.getTitle()),
+                2000L,
+                this.appContext,
+                TaskUpdatedActivity.class);
     }
 
     public void backToMainActivityButtonClicked(View view) {
@@ -45,9 +49,12 @@ public class UpdateTaskActivityClickHandler {
 
     public void deleteButtonClicked(View view) {
         Log.i("Intent", "Moving to main activity.");
-        Intent intent = new Intent(this.appContext, MainActivity.class);
         viewModel.deleteTask(task.getId());
 
-        this.appContext.startActivity(intent);
+        switchToActivityWithMessage(
+                String.format("Task \"%s\" deleted.", task.getTitle()),
+                2000L,
+                this.appContext,
+                TaskUpdatedActivity.class);
     }
 }

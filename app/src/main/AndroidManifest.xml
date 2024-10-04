@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Waddl"
         tools:targetApi="31">
         <activity
+            android:name=".ui.taskdeletedactivity.TaskUpdatedActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.updatetaskactivity.UpdateTaskActivity"
             android:exported="false" />
         <activity

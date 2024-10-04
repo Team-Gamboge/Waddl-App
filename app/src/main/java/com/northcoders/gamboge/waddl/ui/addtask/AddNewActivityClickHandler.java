@@ -10,6 +10,7 @@ import com.northcoders.gamboge.waddl.model.Task;
 import com.northcoders.gamboge.waddl.model.TaskRepository;
 import com.northcoders.gamboge.waddl.ui.mainactivity.MainActivity;
 import com.northcoders.gamboge.waddl.ui.mainactivity.MainActivityViewModel;
+import com.northcoders.gamboge.waddl.ui.taskdeletedactivity.TaskUpdatedActivity;
 import com.northcoders.gamboge.waddl.utility.Utility;
 
 public class AddNewActivityClickHandler {
@@ -24,8 +25,6 @@ public class AddNewActivityClickHandler {
     }
 
     public void addTaskButtonClicked(View view) {
-        Intent intent = new Intent(this.appContext, MainActivity.class);
-
 //        if (Utility.containsNullNonPrimitiveFields(this.task) ||
 //                Utility.containsBlankStringFields(this.task) ||
 //                this.task == null) {
@@ -33,8 +32,11 @@ public class AddNewActivityClickHandler {
 //        }
 
         this.viewModel.addNewTask(task);
-
-        this.appContext.startActivity(intent);
+        Utility.switchToActivityWithMessage(
+                String.format("Task \"%s\" added successfully!", task.getTitle()),
+                2000L,
+                this.appContext,
+                TaskUpdatedActivity.class);
     }
 
     public void backToMainActivityButtonClicked(View view) {
