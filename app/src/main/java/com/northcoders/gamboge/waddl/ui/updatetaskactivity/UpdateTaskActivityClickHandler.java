@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.northcoders.gamboge.waddl.model.Task;
@@ -56,5 +57,12 @@ public class UpdateTaskActivityClickHandler {
                 2000L,
                 this.appContext,
                 TaskUpdatedActivity.class);
+    }
+
+    public void onCompletedStateChanged(View view) {
+        if (!(view instanceof CheckBox))
+            return;
+
+        task.setCompleted(((CheckBox) view).isChecked());
     }
 }
