@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.northcoders.gamboge.waddl.ui.addtask.AddTaskActivity;
+import com.northcoders.gamboge.waddl.ui.creditsactivity.CreditsActivity;
 
 public class MainActivityClickHandler {
     private Context appContext;
@@ -25,5 +26,12 @@ public class MainActivityClickHandler {
 
     public void penguinBooped(View view) {
         
+    }
+
+    public void goToCreditsButtonClicked(View view) {
+        Log.i("Intent", "Moving to credits activity.");
+        Intent intent = new Intent(appContext, CreditsActivity.class);
+
+        this.appContext.startActivity(intent);
     }
 }
