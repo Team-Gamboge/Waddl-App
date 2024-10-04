@@ -10,9 +10,11 @@ import androidx.lifecycle.MutableLiveData;
 import com.northcoders.gamboge.waddl.service.RetrofitInstance;
 import com.northcoders.gamboge.waddl.service.TaskApiService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,8 +51,6 @@ public class TaskRepository {
 
         return mutableLiveData;
     }
-
-
 
     public void addTask(Task task) {
 
