@@ -39,5 +39,11 @@ public class UpdateTaskActivity extends AppCompatActivity {
         this.binding.radioButton.setOnCheckedChangeListener((compoundButton, b) -> {
             this.task.setCompleted(b);
         });
+
+        if (!this.task.getIsCompleted())
+            this.binding.imageView.setImageResource(R.drawable.crouch);
+        else
+            this.binding.imageView.setImageResource(R.drawable.jump);
+
     }
 }

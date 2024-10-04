@@ -8,11 +8,14 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.library.baseAdapters.BR;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Task extends BaseObservable implements Parcelable {
 
     private Long id;
     private String title;
     private String description;
+    @SerializedName("completed")
     private boolean isCompleted;
     public static String PARCEL_KEY = "WADDL_TASK";
 
