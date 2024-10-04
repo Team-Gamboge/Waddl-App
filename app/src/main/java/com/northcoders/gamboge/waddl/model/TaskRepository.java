@@ -77,10 +77,10 @@ public class TaskRepository {
 
     public void updateTask(long id, Task task) {
         TaskApiService taskApiService = RetrofitInstance.getService();
-
         Call<Task> call = taskApiService.updateTaskById(id, task);
 
         call.enqueue(new Callback<Task>() {
+
             @Override
             public void onResponse(@NonNull Call<Task> call, @NonNull Response<Task> response) {
                 Toast.makeText(application.getApplicationContext(),
@@ -97,8 +97,6 @@ public class TaskRepository {
                 Log.e("PUT REQUEST", Objects.requireNonNull(t.getMessage()));
             }
         });
-
-
     }
 // If there are any errors, revise usage of type 'void'. change string
     public void deleteTaskById(long id) {

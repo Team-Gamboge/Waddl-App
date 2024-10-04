@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.northcoders.gamboge.waddl.R;
 import com.northcoders.gamboge.waddl.ui.mainactivity.MainActivity;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -21,8 +23,11 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.welcome);
 
         TextView myTextView = findViewById(R.id.Waddl);
+        GifImageView penguin = findViewById(R.id.penguinGif);
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         myTextView.startAnimation(fadeIn);
+        penguin.startAnimation(fadeIn);
+
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
