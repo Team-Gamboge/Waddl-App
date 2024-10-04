@@ -1,8 +1,18 @@
 package com.northcoders.gamboge.waddl.utility;
 
+import android.content.Context;
+import android.content.Intent;
+
 import java.lang.reflect.Field;
 
 public class Utility {
+
+    public static <T> void switchToActivityWithMessage(String message, Long delay, Context context, Class<T> activity) {
+        Intent intent = new Intent(context, activity);
+        intent.putExtra("DISPLAY_TEXT", message);
+        intent.putExtra("DELAY_TO_TRANSITION", delay);
+        context.startActivity(intent);
+    }
 
     public static <T> Boolean containsNullNonPrimitiveFields(T instance) {
         try {

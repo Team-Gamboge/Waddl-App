@@ -19,4 +19,8 @@ public class UpdateTaskActivityViewModel extends AndroidViewModel {
     public void updateTask(Long id, Task task) {
         this.taskRepository.updateTask(id, task);
     }
+
+    public void deleteTask(Long id) {
+        this.taskRepository.deleteTaskById(id);
+    }
 }
