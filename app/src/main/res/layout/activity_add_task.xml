@@ -32,10 +32,10 @@
             />
 
         <TextView
-            android:id="@+id/editText"
+            android:id="@+id/addATaskText"
             android:fontFamily="monospace"
             android:textStyle="bold"
-            android:textColor="@color/textbeige"
+            android:textColor="@color/penguinorange"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="Add a Task"
@@ -49,9 +49,11 @@
         <EditText
             android:id="@+id/editTitle"
             android:fontFamily="monospace"
-            android:textColor="@color/textbeige"
+            android:textColor="@color/black"
             android:layout_width="395dp"
             android:layout_height="83dp"
+            android:textStyle="bold"
+            android:textSize="22dp"
             android:hint="Enter title"
             android:minHeight="60dp"
             android:text="@={task.title}"
@@ -59,11 +61,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.421"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/addATaskText" />
 
         <EditText
             android:id="@+id/edit_description"
-            android:textColor="@color/textbeige"
+            android:textColor="@color/black"
+            android:textSize="20dp"
             android:fontFamily="monospace"
             android:layout_width="395dp"
             android:layout_height="0dp"
@@ -73,16 +76,16 @@
             android:minLines="3"
             android:text="@={task.description}"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/updateTaskButton"
+            app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTitle" />
 
         <Button
-            android:id="@+id/updateTaskButton"
-            android:textColor="@color/pingugrey"
+            android:id="@+id/addTaskButton"
+            android:textColor="@color/darkergrey"
             android:fontFamily="monospace"
-            app:strokeColor="@color/pingugrey"
+            app:strokeColor="@color/darkergrey"
             app:strokeWidth="4dp"
             android:backgroundTint="@color/originalorange"
             android:textStyle="bold"
