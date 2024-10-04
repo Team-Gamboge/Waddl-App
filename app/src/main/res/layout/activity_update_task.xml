@@ -32,8 +32,8 @@
             />
 
         <TextView
-            android:id="@+id/editText"
-            android:textColor="@color/textbeige"
+            android:id="@+id/updateATaskText"
+            android:textColor="@color/penguinorange"
             android:fontFamily="monospace"
             android:layout_width="0dp"
             android:textStyle="bold"
@@ -48,9 +48,11 @@
 
         <EditText
             android:id="@+id/editTitle"
-            android:textColor="@color/textbeige"
+            android:textColor="@color/black"
             android:fontFamily="monospace"
+            android:textStyle="bold"
             android:layout_width="395dp"
+            android:textSize="22dp"
             android:layout_height="83dp"
             android:hint="Enter title"
             android:minHeight="60dp"
@@ -59,11 +61,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.421"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/updateATaskText" />
 
         <EditText
             android:id="@+id/edit_description"
-            android:textColor="@color/textbeige"
+            android:textColor="@color/black"
+            android:textSize="20dp"
             android:fontFamily="monospace"
             android:layout_width="395dp"
             android:layout_height="0dp"
@@ -80,9 +83,9 @@
 
         <Button
             android:id="@+id/updateTaskButton"
-            android:textColor="@color/pingugrey"
+            android:textColor="@color/darkergrey"
             android:fontFamily="monospace"
-            app:strokeColor="@color/pingugrey"
+            app:strokeColor="@color/darkergrey"
             app:strokeWidth="4dp"
             android:backgroundTint="@color/originalorange"
             android:textStyle="bold"
