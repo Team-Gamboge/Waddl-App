@@ -19,6 +19,11 @@ public class MainActivityViewModel extends AndroidViewModel {
     private TaskRepository taskRepository;
     private QuoteRepository quoteRepository;
     private MutableLiveData<List<Task>> taskLiveData;
+    private MainActivity activity;
+
+    public void setActivity(MainActivity activity) {
+        this.activity = activity;
+    }
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
@@ -42,5 +47,7 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Quote>> getQuote() { return quoteRepository.getQuote(); }
+
+    public void updateQuote() { this.activity.getQuote(); }
 
 }
