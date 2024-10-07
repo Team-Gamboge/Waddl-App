@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QuoteRetrofitInstance {
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "https://zenquotes.io/api/";
+    private static final String BASE_URL = "http://api.quotable.io/quotes/";
 
 
     public static QuoteApiService getService() {
