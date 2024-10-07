@@ -18,7 +18,6 @@ import com.northcoders.gamboge.waddl.databinding.ActivityMainBinding;
 import com.northcoders.gamboge.waddl.model.Quote;
 import com.northcoders.gamboge.waddl.model.Task;
 import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivity;
-import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +37,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewModel = new ViewModelProvider(this)
+                .get(MainActivityViewModel.class);
+        viewModel.setActivity(this);
         clickHandler = new MainActivityClickHandler(this, viewModel);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setClickHandler(clickHandler);
         quoteTextView = binding.quoteTextView;
         binding.setQuote(quote);
-
-        viewModel = new ViewModelProvider(this)
-                .get(MainActivityViewModel.class);
 
         getQuote();
         getAllTasks();
