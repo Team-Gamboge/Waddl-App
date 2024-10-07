@@ -3,9 +3,7 @@ package com.northcoders.gamboge.waddl.ui.mainactivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
@@ -18,7 +16,6 @@ import com.northcoders.gamboge.waddl.databinding.ActivityMainBinding;
 import com.northcoders.gamboge.waddl.model.Quote;
 import com.northcoders.gamboge.waddl.model.Task;
 import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivity;
-import com.northcoders.gamboge.waddl.ui.updatetaskactivity.UpdateTaskActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 quote = quoteFromLiveData.get(0);
                 quote.notifyChange();
 
-                quoteTextView.setText(quote.getQ());
+                quoteTextView.setText(quote.getContent());
             }
         });
     }
