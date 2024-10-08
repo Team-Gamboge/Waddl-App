@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface QuoteApiService {
 
-    @GET("random/?maxLength=140&tags=success")
+    @GET("random/?maxLength=130&tags=wisdom")
     Call<List<Quote>> getQuote();
 
 }
