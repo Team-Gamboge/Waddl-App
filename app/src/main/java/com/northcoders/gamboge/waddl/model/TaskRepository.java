@@ -65,9 +65,7 @@ public class TaskRepository {
         call.enqueue(new Callback<Task>() {
             @Override
             public void onResponse(@NonNull Call<Task> call, @NonNull Response<Task> response) {
-                Toast.makeText(application.getApplicationContext(),
-                        "Task added to database",
-                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -91,9 +89,7 @@ public class TaskRepository {
 
             @Override
             public void onResponse(@NonNull Call<Task> call, @NonNull Response<Task> response) {
-                Toast.makeText(application.getApplicationContext(),
-                        "Task updated",
-                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -118,9 +114,7 @@ public class TaskRepository {
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
-                Toast.makeText(application.getApplicationContext(),
-                        "Task deleted",
-                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
