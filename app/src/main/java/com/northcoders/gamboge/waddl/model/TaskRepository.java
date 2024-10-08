@@ -31,7 +31,7 @@ public class TaskRepository {
 
     public static MutableLiveData<List<Task>> getTasks() {
 
-        TaskApiService taskApiService = RetrofitInstanceBuilder
+        TaskApiService taskApiService = (TaskApiService) RetrofitInstanceBuilder
                 .getService(
                         "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/",
                         TaskApiService.class);

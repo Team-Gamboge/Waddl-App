@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface TaskApiService {
+public interface TaskApiService extends ApiService {
 
     @GET("tasks")
     Call<List<Task>> getAllTasks();
