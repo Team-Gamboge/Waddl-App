@@ -121,17 +121,15 @@
                   android:layout_marginEnd="8dp"
                   android:fontFamily="monospace"
                   android:gravity="center"
-                  android:text="@{quote.content}"
+                  android:text="QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
                   android:textAlignment="center"
                   android:textColor="@color/black"
-                  android:fontFamily="monospace"
-                  android:textStyle="bold"
                   android:textSize="18sp"
+                  android:textStyle="bold"
                   app:layout_constraintBottom_toBottomOf="parent"
                   app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toTopOf="parent"
-                  tools:text="QUOTE GOES HERE" />
+                  app:layout_constraintTop_toTopOf="parent" />
           </androidx.constraintlayout.widget.ConstraintLayout>
 
       </FrameLayout>
