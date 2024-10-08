@@ -7,14 +7,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.northcoders.gamboge.waddl.service.RetrofitInstance;
+import com.northcoders.gamboge.waddl.service.RetrofitInstanceBuilder;
 import com.northcoders.gamboge.waddl.service.TaskApiService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,7 +31,11 @@ public class TaskRepository {
 
     public static MutableLiveData<List<Task>> getTasks() {
 
-        TaskApiService taskApiService = RetrofitInstance.getService();
+        TaskApiService taskApiService = RetrofitInstanceBuilder
+                .getService(
+                        "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/",
+                        TaskApiService.class);
+
         Call<List<Task>> call = taskApiService.getAllTasks();
 
         call.enqueue(new Callback<List<Task>>() {
@@ -54,7 +56,10 @@ public class TaskRepository {
 
     public void addTask(Task task) {
 
-        TaskApiService taskApiService = RetrofitInstance.getService();
+        TaskApiService taskApiService = RetrofitInstanceBuilder
+                .getService(
+                        "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/",
+                        TaskApiService.class);
 
         Call<Task> call = taskApiService.addTask(task);
         call.enqueue(new Callback<Task>() {
@@ -76,7 +81,10 @@ public class TaskRepository {
     }
 
     public void updateTask(long id, Task task) {
-        TaskApiService taskApiService = RetrofitInstance.getService();
+        TaskApiService taskApiService = RetrofitInstanceBuilder
+                .getService(
+                        "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/",
+                        TaskApiService.class);
         Call<Task> call = taskApiService.updateTaskById(id, task);
 
         call.enqueue(new Callback<Task>() {
@@ -100,7 +108,10 @@ public class TaskRepository {
     }
 // If there are any errors, revise usage of type 'void'. change string
     public void deleteTaskById(long id) {
-        TaskApiService taskApiService = RetrofitInstance.getService();
+        TaskApiService taskApiService = RetrofitInstanceBuilder
+                .getService(
+                        "http://waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com/api/v1/",
+                        TaskApiService.class);
 
         Call<Void> call = taskApiService.deleteTaskById(id);
 

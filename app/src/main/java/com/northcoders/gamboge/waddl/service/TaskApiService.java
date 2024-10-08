@@ -25,7 +25,4 @@ public interface TaskApiService {
 
     @DELETE("tasks/{id}")
     Call<Void> deleteTaskById(@Path("id") long id);
-
-
-
 }
