@@ -5,19 +5,21 @@ import androidx.databinding.Bindable;
 
 public class Quote extends BaseObservable {
 
-    private String q;
+
+    private String content;
+
 
 
     public Quote(String q) {
-        this.q = q;
+        this.content = q;
     }
 
     public Quote() {
     }
 
     @Bindable
-    public String getQ() {
-        return q;
+    public String getContent() {
+        return content;
     }
 
 

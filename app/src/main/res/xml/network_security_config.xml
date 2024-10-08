@@ -3,5 +3,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">waddlbackend-env.eba-gmmyh7ye.eu-west-2.elasticbeanstalk.com</domain>
         <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">api.quotable.io</domain>
+
     </domain-config>
 </network-security-config>

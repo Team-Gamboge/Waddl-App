@@ -5,7 +5,7 @@ import android.app.Application;
 import androidx.lifecycle.MutableLiveData;
 
 import com.northcoders.gamboge.waddl.service.QuoteApiService;
-import com.northcoders.gamboge.waddl.service.QuoteRetrofitInstance;
+import com.northcoders.gamboge.waddl.service.RetrofitInstanceBuilder;
 
 import java.util.List;
 
@@ -23,7 +23,11 @@ public class QuoteRepository {
     }
 
     public static MutableLiveData<List<Quote>> getQuote() {
-        QuoteApiService quoteApiService = QuoteRetrofitInstance.getService();
+
+        QuoteApiService quoteApiService = RetrofitInstanceBuilder
+                .getService("http://api.quotable.io/quotes/",
+                        QuoteApiService.class);
+
         Call<List<Quote>> call = quoteApiService.getQuote();
 
         call.enqueue(new Callback<List<Quote>>() {
@@ -42,7 +46,10 @@ public class QuoteRepository {
         return mutableLiveData;
     }
     public void fetchQuote(Callback<Quote> callback) {
-        QuoteApiService quoteApiService = QuoteRetrofitInstance.getService();
+        QuoteApiService quoteApiService = RetrofitInstanceBuilder
+                .getService("http://api.quotable.io/quotes/",
+                        QuoteApiService.class);
+
         Call<List<Quote>> call = quoteApiService.getQuote();
     }
 

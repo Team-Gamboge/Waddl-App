@@ -25,7 +25,7 @@ public class MainActivityClickHandler {
     }
 
     public void penguinBooped(View view) {
-        
+        this.viewModel.updateQuote();
     }
 
     public void goToCreditsButtonClicked(View view) {

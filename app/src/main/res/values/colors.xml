@@ -10,6 +10,6 @@
     <color name="originalorange">#F6995C</color>
     <color name="pingugrey">#555555</color>
     <color name="darkergrey">#3C3D37</color>
-    <color name="taskcomplete">#FF0000</color>
+    <color name="taskcomplete">#A9FFD0</color>
     <color name="originalred">#F27A7A</color>
 </resources>
